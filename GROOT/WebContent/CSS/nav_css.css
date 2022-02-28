@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+
+/* nav bar --------------------------------------------------------------*/
+
+nav {
+	background-color: black;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: red;
+	border-bottom-color: red;
+	border-width: 4px;
+}
+
+#header {
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+#header i {
+	background-color: black;
+	border: none;
+	color: white;
+	font-size: 40px;
+	cursor: pointer;
+	padding-left: 100px;
+	padding-top: 5px;
+}
+
+#header i:hover {
+	
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: inline-block;
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+	background-color: red;
+}

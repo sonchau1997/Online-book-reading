@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Group9- Hệ thống quản lý Thư viện điện tử</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link href="../vendor/datatables-plugins/dataTables.bootstrap.css"
+	rel="stylesheet">
+
+<!-- DataTables Responsive CSS -->
+<link href="../vendor/datatables-responsive/dataTables.responsive.css"
+	rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+
+<script>
+	window.onload = function() {
+
+		var chart = new CanvasJS.Chart("bieu_do_cot", {
+			animationEnabled : true,
+			theme : "light2", // "light1", "light2", "dark1", "dark2"
+			title : {
+				text : ""
+			},
+			data : [ {
+				type : "column", //change type to bar, line, area, pie, etc
+				indexLabel : "{y}", //Shows y value on all Data Points
+				indexLabelFontColor : "#5A5757",
+				indexLabelPlacement : "outside",
+				dataPoints : [ {
+					x : 10,
+					y : 271,
+					label : "Kỹ năng sống"
+				}, {
+					x : 20,
+					y : 255,
+					label : "Kinh tế"
+				}, {
+					x : 30,
+					y : 220,
+					label : "Marketing"
+				}, {
+					x : 40,
+					y : 130,
+					label : "Y học"
+				}, {
+					x : 50,
+					y : 272,
+					label : "Ngoại ngữ"
+				}, {
+					x : 60,
+					y : 168,
+					label : "Khoa học"
+				}, {
+					x : 70,
+					y : 140,
+					label : "Nghệ thuật"
+				}, {
+					x : 80,
+					y : 240,
+					label : "Trinh thám"
+				} ]
+			} ]
+		});
+		chart.render();
+		//-------------------------------------------
+		var chart = new CanvasJS.Chart("bieu_do_quat", {
+			theme : "light2", // "light1", "light2", "dark1", "dark2"
+			animationEnabled : true,
+			title : {
+				text : ""
+			},
+			data : [ {
+				type : "pie",
+				startAngle : 25,
+				toolTipContent : "<b>{label}</b>: {y}%",
+				legendText : "{label}",
+				indexLabelFontSize : 16,
+				indexLabel : "{label} - {y}%",
+				dataPoints : [ {
+					// 756
+					y : 16.62,
+					label : "Kỹ năng sống"
+				}, {
+					y : 15.34,
+					label : "Kinh tế"
+				}, {
+					y : 11.87,
+					label : "Marketing"
+				}, {
+					y : 2.02,
+					label : "Y học"
+				}, {
+					y : 17.75,
+					label : "Ngoại ngữ"
+				}, {
+					y : 5.9,
+					label : "Khoa học"
+				}, {
+					y : 0.22,
+					label : "Thể thao"
+				}, {
+					y : 14.22,
+					label : "Trinh thám"
+				} ]
+			} ]
+		});
+		chart.render();
+		// --------------------------------------------------------------------
+		var chart = new CanvasJS.Chart("bieu_do_duong", {
+			theme : "light2",
+			animationEnabled : true,
+			// 			exportEnabled : true,
+			title : {
+				text : ""
+			},
+			axisY : {
+				title : "Views"
+			},
+			toolTip : {
+				shared : true
+			},
+			legend : {
+				cursor : "pointer",
+				itemclick : toggleDataSeries
+			},
+			data : [ {
+				type : "spline",
+				name : "Kỹ năng sống",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 90
+				}, {
+					label : "Week 2",
+					y : 67
+				}, {
+					label : "Week 3",
+					y : 48
+				}, {
+					label : "Week 4",
+					y : 66
+				} ]
+			}, {
+				type : "spline",
+				name : "Kinh tế",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 44
+				}, {
+					label : "Week 2",
+					y : 63
+				}, {
+					label : "Week 3",
+					y : 40
+				}, {
+					label : "Week 4",
+					y : 108
+				} ]
+			}, {
+				type : "spline",
+				name : "Marketing",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 44
+				}, {
+					label : "Week 2",
+					y : 57
+				}, {
+					label : "Week 3",
+					y : 73
+				}, {
+					label : "Week 4",
+					y : 46
+				} ]
+			}, {
+				type : "spline",
+				name : "Y học",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 30
+				}, {
+					label : "Week 2",
+					y : 32
+				}, {
+					label : "Week 3",
+					y : 25
+				}, {
+					label : "Week 4",
+					y : 46
+				} ]
+			}, {
+				type : "spline",
+				name : "Ngoại ngữ",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 68
+				}, {
+					label : "Week 2",
+					y : 78
+				}, {
+					label : "Week 3",
+					y : 58
+				}, {
+					label : "Week 4",
+					y : 68
+				} ]
+			}, {
+				type : "spline",
+				name : "Khoa học",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 44
+				}, {
+					label : "Week 2",
+					y : 40
+				}, {
+					label : "Week 3",
+					y : 50
+				}, {
+					label : "Week 4",
+					y : 31
+				} ]
+			}, {
+				type : "spline",
+				name : "Nghệ thuật",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 40
+				}, {
+					label : "Week 2",
+					y : 35
+				}, {
+					label : "Week 3",
+					y : 30
+				}, {
+					label : "Week 4",
+					y : 35
+				} ]
+			}, {
+				type : "spline",
+				name : "Trinh thám",
+				showInLegend : true,
+				dataPoints : [ {
+					label : "Week 1",
+					y : 44
+				}, {
+					label : "Week 2",
+					y : 65
+				}, {
+					label : "Week 3",
+					y : 60
+				}, {
+					label : "Week 4",
+					y : 70
+				} ]
+			} ]
+		});
+
+		chart.render();
+	}
+	//-----------------------------------------------------------
+	function toggleDataSeries(e) {
+		if (typeof (e.dataSeries.visible) === "undefined"
+				|| e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		} else {
+			e.dataSeries.visible = true;
+		}
+		chart.render();
+	}
+</script>
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">HCI Admin</a>
+			</div>
+			<!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i
+						class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-messages">
+						<li><a href="#">
+								<div>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>10 hours ago</em>
+									</span>
+								</div>
+								<div>Messing content 1</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<strong>John Smith</strong> <span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div>Messing content 2</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a class="text-center" href="#"> <strong>Read
+									All Messages</strong> <i class="fa fa-angle-right"></i>
+						</a></li>
+					</ul> <!-- /.dropdown-messages --></li>
+
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-alerts">
+						<li><a href="#">
+								<div>
+									<i class="fa fa-comment fa-fw"></i> New Comment <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="#">
+								<div>
+									<i class="fa fa-envelope fa-fw"></i> Message Sent <span
+										class="pull-right text-muted small">4 minutes ago</span>
+								</div>
+						</a></li>
+						<li class="divider"></li>
+						<li><a class="text-center" href="#"> <strong>See
+									All Alerts</strong> <i class="fa fa-angle-right"></i>
+						</a></li>
+					</ul> <!-- /.dropdown-alerts --></li>
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
+						<i class="fa fa-caret-down"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="#"><i class="fa fa-user fa-fw"></i> User
+								Profile</a></li>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+						</li>
+						<li class="divider"></li>
+						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
+								Logout</a></li>
+					</ul> <!-- /.dropdown-user --></li>
+				<!-- /.dropdown -->
+			</ul>
+			<!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div> <!-- /input-group -->
+						</li>
+						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
+								Dashboard</a></li>
+						<li><a href="userManagement.html"><i
+								class="fa fa-user fa-fw"></i> User Management</a></li>
+						<li><a href="bookManagement.html"><i
+								class="fa fa-book fa-fw"></i> Book Management</a></li>
+						<li><a href="typeManagement.html"><i
+								class="glyphicon  glyphicon-book fa-fw"></i> Type Management</a></li>
+						<li><a href="authorManagement.html"><i
+								class="fa fa-user-secret fa-fw"></i> Author Management</a></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- -----------------------	chuc nang thong ke ------------------------------->
+					<div class="container mt-3">
+						<h1>Dashboard</h1>
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs">
+							<li class="nav-item"><a class="nav-link active"
+								data-toggle="tab" href="#home" style="color: black">Book Types View</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab"
+								href="#menu1" style="color: black">Books View</a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<!--Tab1------------------------------------------------>
+						<div class="tab-content">
+							<div id="home" class="container tab-pane active">
+								<div class="row" style="margin-top: 10px;">
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-6">
+												<div
+													style="height: 30px; background-color: #f5f5f5; text-align: center;">
+													<label style="margin-top: 5px">Views during the
+														month</label>
+												</div>
+												<div id="bieu_do_cot"
+													style="height: 300px; width: 100%; border-style: solid; border-color: #f5f5f5"></div>
+												<script
+													src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+											</div>
+											<div class="col-sm-6">
+												<div
+													style="height: 30px; background-color: #f5f5f5; text-align: center;">
+													<label style="margin-top: 5px;">Views percentage</label>
+												</div>
+												<div id="bieu_do_quat"
+													style="height: 300px; width: 100%; border-style: solid; border-color: #f5f5f5"></div>
+												<script
+													src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+											</div>
+											<div class="col-sm-12" style="margin-top: 10px;">
+												<div
+													style="height: 30px; background-color: #f5f5f5; text-align: center;">
+													<label style="margin-top: 5px;">Total views of the
+														week</label>
+												</div>
+												<div id="bieu_do_duong"
+													style="height: 300px; width: 100%; border-style: solid; border-color: #f5f5f5"></div>
+												<script
+													src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+											</div>
+										</div>
+									</div>
+									<!-- 									<div class="col-sm-2"></div> -->
+								</div>
+							</div>
+							<!--Tab2------------------------------------------------>
+							<div id="menu1" class="container tab-pane fade">
+								<div class="container">
+									<div class="row" style="margin-top: 10px">
+										<div class="col-lg-3">
+										Filter result base on:
+											<select style="border-color: #e0e7eb; border-width: 1px; height: 30px">
+												<option>Views</option>
+												<option>Name</option>
+												<option>Author</option>
+												<option>Type</option>
+											</select>
+										</div>
+										
+										<div class="col-lg-3">
+										Choose data base on:
+											<select style="border-color: #e0e7eb; border-width: 1px; height: 30px">
+												<option>Day</option>
+												<option>Week</option>
+												<option>Month</option>
+												<option>Year</option>
+											</select>
+										</div>
+										<div class="col-lg-6"></div>
+									</div>
+									<div class="row">
+										<div class="col-lg-10">
+											<table class="table table-bordered" style="margin-top: 10px">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Author</th>
+														<th>Type</th>
+														<th>Views</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Đắc Nhân Tâm</td>
+														<td>Dale Canegie</td>
+														<td>Kỹ năng sống</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 80%; height: 30px">80</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Tôi Thấy Hoa Vàng Trên Cỏ Xanh</td>
+														<td>Nguyễn Nhật Ánh</td>
+														<td>Văn học</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 57%; height: 30px">57</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>5 Centimet Trên Giây</td>
+														<td>Shinkai Makoto</td>
+														<td>Văn học</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 53%; height: 30px">53</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Lối sống tối giản của người Nhật</td>
+														<td>Sasaki Fumio</td>
+														<td>Y học - Sức khỏe</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 51%; height: 30px">51</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Nhìn lên những chòm sao</td>
+														<td>Trần Thời</td>
+														<td>Văn học</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 47%; height: 30px">47</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Bạn thật sự có tài</td>
+														<td>Tina Seelig</td>
+														<td>Kỹ năng sống</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 44%; height: 30px">44</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Sách Trang Vàng Việt Nam</td>
+														<td>(không rõ)</td>
+														<td>Kinh tế - Tài chính</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 43%; height: 30px">43</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Bạn thật sự có tài</td>
+														<td>Tina Seelig</td>
+														<td>Kỹ năng sống</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 41%; height: 30px">41</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Kỹ Năng Bán Hàng</td>
+														<td>William T. Brooks</td>
+														<td>Marketing</td>
+														<td style="width: 50%;">
+															<div class="progress"
+																style="height: 30px; margin-bottom: 0px;">
+																<div class="progress-bar"
+																	style="width: 39%; height: 30px">39</div>
+															</div>
+														</td>
+													</tr>
+
+												</tbody>
+
+											</table>
+
+											<div class=row>
+												<div class="col-lg-8"></div>
+												<div class="col-lg-4">
+													<ul class="pager">
+														<li><a href="#">Previous</a></li>
+														<li><a class="active" href="#">1</a></li>
+														<li><a href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li><a href="#">Next</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12"></div>
+				<!-- /.row -->
+			</div>
+			<!-- /#page-wrapper -->
+		</div>
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+	<!-- DataTables JavaScript -->
+	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+	<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../dist/js/sb-admin-2.js"></script>
+
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+	</script>
+
+</body>
+
+</html>

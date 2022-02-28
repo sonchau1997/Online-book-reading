@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>thong ke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./CSS/MyBootrap.css">
+<link rel="stylesheet" href="./CSS/thongke_css.css">
+<!-- Add icon library -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add css online library -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	<!-- tab begin -->
+	<div class="row">
+		<!------------ col 1 --------------->
+		<div class="col-1"></div>
+		<!------------ col 2 --------------->
+		<div class="col-2">
+			<!-- Sidebar -->
+			<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 17%">
+				<h3 class="w3-bar-item">Danh mục sách</h3>
+				<a href="#" class="w3-bar-item w3-button">Sách tiếng việt</a> <a
+					href="#" class="w3-bar-item w3-button">Sách kinh tế</a> <a href="#"
+					class="w3-bar-item w3-button">Sách thiếu nhi</a><a href="#"
+					class="w3-bar-item w3-button">Sách kỹ năng - sống đẹp</a> <a
+					href="#" class="w3-bar-item w3-button">Sách giáo khoa</a> <a
+					href="#" class="w3-bar-item w3-button">Sách học ngoại ngữ</a> <a
+					href="#" class="w3-bar-item w3-button">Sách tham khảo</a>
+			</div>
+		</div>
+		<!------------ col 3 --------------->
+		<div class="col-8">
+			<div class="tke-tab">
+				<button class="tablinks" onclick="openCity(event, 'London')"
+					id="defaultOpen">Sách mới</button>
+				<button class="tablinks" onclick="openCity(event, 'Paris')">Sách
+					xem nhiều</button>
+			</div>
+			<!-- tab sach moi -->
+			<div id="London" class="tke-tab-content">
+				<span onclick="this.parentElement.style.display='none'"
+					class="topright">&times</span>
+				<!-- danh muc sach -->
+				<div class="row" style="margin-top: 20px;">
+					<!--sach 1-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 1.png">
+							</div>
+							<div class="book-info">
+								<p>Bố Mẹ Đã Cưa Đổ Tớ (Đỗ Nhật Nam)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 2-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 2.png">
+							</div>
+							<div class="book-info">
+								<p>Nuôi Dưỡng Và Phát Triển(Glenn Doman - Janet Doman)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 3-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 3.png">
+							</div>
+							<div class="book-info">
+								<p>Sống Đơn Giản (Shunmyo Masuno)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 4-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 4.png">
+							</div>
+							<div class="book-info">
+								<p>Dạy Trẻ Học Toán (Glenn Doman - Janet Doman)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 5-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 5.png">
+							</div>
+							<div class="book-info">
+								<p>Quá trẻ để chết (Đinh Hằng)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 6-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 6.png">
+							</div>
+							<div class="book-info">
+								<p>Những Mẩu Chuyện Vui Của Cáo Và Thỏ (Ngô Anh Thi)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 7-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 7.png">
+							</div>
+							<div class="book-info">
+								<p>Dạy Con Kiểu Nhật (Kubota Kisou)</p>
+								</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 8-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH MOI/sach 8.png">
+							</div>
+							<div class="book-info">
+								<p>Những Đỉnh Cao Chỉ Huy (DANIEL YERGIN)</p>
+								</p>
+							</div>
+						</a>
+					</div>
+					<!--het danh muc -->
+				</div>
+
+				<!-- next previous button -->
+				<div class="row">
+					<div class="col-7"></div>
+					<div class="col-5 pn-btn-frame">
+						<a href="#" class="previous round">&#8249;</a> <a href="#">1</a><a
+							href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a
+							href="#" class="next round">&#8250;</a>
+					</div>
+				</div>
+			</div>
+			<!-- tab xem nhieu -->
+			<div id="Paris" class="tke-tab-content">
+				<span onclick="this.parentElement.style.display='none'"
+					class="topright">&times</span>
+				<!-- danh muc sach -->
+				<div class="row" style="margin-top: 20px;">
+					<!--sach 1-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 1.png">
+							</div>
+							<div class="book-info">
+								<p>Nhà giả kim (Paulo Enco)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 2-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 2.png">
+							</div>
+							<div class="book-info">
+								<p>Nuôi Dưỡng Và Phát Triển(Glenn Doman - Janet Doman)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 3-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 3.png">
+							</div>
+							<div class="book-info">
+								<p>Khí chất bao nhiêu hạnh phúc bấy nhiêu (Tô Vũ)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 4-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 4.png">
+							</div>
+							<div class="book-info">
+								<p>Bạn đắc giá bao nhiêu (Tô Vũ)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 5-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 5.png">
+							</div>
+							<div class="book-info">
+								<p>Đắc nhân tâm (Dale Canegie)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 6-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 9.png">
+							</div>
+							<div class="book-info">
+								<p>Sử ký tư mã thiên (Nguyễn Hiến Lê)</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 7-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 10.png">
+							</div>
+							<div class="book-info">
+								<p>Chiến quốc sách (Nguyễn Hiến Lê)</p>
+								</p>
+							</div>
+						</a>
+					</div>
+					<!--sach 8-->
+					<div class="col-3 book-frame">
+						<a>
+							<div class="book-image">
+								<img alt="loading..." src="./IMAGES/SACH XEM NHIEU/sach 11.png">
+							</div>
+							<div class="book-info">
+								<p>Y Ban cưới chợ</p>
+								</p>
+							</div>
+						</a>
+					</div>
+					<!--het danh muc -->
+				</div>
+				<!-- next previous button -->
+				<div class="row">
+					<div class="col-7"></div>
+					<div class="col-5 pn-btn-frame">
+						<a href="#" class="previous round">&#8249;</a> <a href="#">1</a><a
+							href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a
+							href="#" class="next round">&#8250;</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 			<div id="Tokyo" class="tke-tab-content"> -->
+			<!-- 				<span onclick="this.parentElement.style.display='none'" -->
+			<!-- 					class="topright">&times</span> -->
+			<!-- 				<h3>Tokyo</h3> -->
+			<!-- 				<p>Tokyo is the capital of Japan.</p> -->
+			<!-- 			</div> -->
+
+			<script>
+				function openCity(evt, cityName) {
+					var i, tabcontent, tablinks;
+					tabcontent = document
+							.getElementsByClassName("tke-tab-content");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(
+								" active", "");
+					}
+					document.getElementById(cityName).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+
+				// Get the element with id="defaultOpen" and click on it
+				document.getElementById("defaultOpen").click();
+			</script>
+		</div>
+		<!------------ col 4 --------------->
+		<div class="col-1"></div>
+	</div>
+</body>
+</html>

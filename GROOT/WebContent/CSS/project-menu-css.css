@@ -1,0 +1,51 @@
+@charset "ISO-8859-1";
+
+/*------nav ------*/
+.library-nav {
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+	border-bottom-width: 1px;
+}
+
+.library-nav button {
+	padding: 6px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: none;
+	border-radius: 5px;
+	background: #ddd;
+	cursor: pointer;
+	margin-left: 10px;
+	background-color: white;
+	color: #008CBA;
+	box-shadow: 1px black;
+}
+
+.library-nav button:hover {
+	color: #005875;
+}
+
+.library-nav .search-container {
+	
+}
+
+/*-button-*/
+.search-container .search-button {
+		cursor: pointer;
+		margin-left: 0px;
+		background-color: #008CBA;
+		color: white;
+		padding-left: 10px;
+		padding-right: 10px;
+}
+
+/*-search-*/
+.search-container input[type=text] {
+		border-radius: 5px;
+		border: solid;
+		border-color: #ccc;
+		border-width: 1px;
+		padding: 4px;
+		margin-right: 0px;
+		width: 80%;
+}

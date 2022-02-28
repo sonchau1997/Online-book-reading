@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+body{
+	background-color: black;
+}
+
+/* content---------------------------------------------------*/
+#space {
+	size: 200px;
+	padding: 40px;
+}
+
+/*footer css*/

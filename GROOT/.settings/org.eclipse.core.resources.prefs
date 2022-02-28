@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//WebContent/home-menu.jsp=UTF-8
+encoding//src/controller/servlet/ProcessBookServlet.java=UTF-8
+encoding//src/model/dao/ProcessBookDAO.java=UTF-8
